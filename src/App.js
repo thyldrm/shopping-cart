@@ -19,11 +19,11 @@ const App = () => {
 
   const handleIncrement = (product) => {
     // cart array'inin kopyasını oluştur
-    // const cart = [...this.state.cart];
+     const cart = [...cart];
     // parametre olarak gelen product'ın cart array'i içerisindeki index'ini bul
     const index = cart.indexOf(product);
     // kopyalanan cart array'ine bu ürünü ekle ve value property'sini 1 artır
-    //cart[index] = { ...cart[index] };
+    cart[index] = { ...cart[index] };
     cart[index].value++;
     // getItemCount fonksiyonunu kullanarak sepetteki ürün sayısını bul
     const itemCount = this.getItemCount(cart);
@@ -34,9 +34,9 @@ const App = () => {
   };
 
   const handleDecrement = (product) => {
-    //const cart = [...this.state.cart];
+    const cart = [...cart];
     const index = cart.indexOf(product);
-    //cart[index] = { ...cart[index] };
+    cart[index] = { ...cart[index] };
     cart[index].value--;
     const itemCount = this.getItemCount(cart);
     //this.setState({ cart, itemCount });
